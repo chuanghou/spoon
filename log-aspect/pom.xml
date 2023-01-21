@@ -9,18 +9,26 @@
     <version>1.0-SNAPSHOT</version>
   </parent>
 
-  <artifactId>starter</artifactId>
+  <artifactId>log-aspect</artifactId>
 
   <dependencies>
     <dependency>
-      <groupId>org.example.spoon</groupId>
-      <artifactId>application</artifactId>
+      <groupId>org.aspectj</groupId>
+      <artifactId>aspectjrt</artifactId>
     </dependency>
     <dependency>
-      <groupId>junit</groupId>
-      <artifactId>junit</artifactId>
-      <scope>test</scope>
+      <groupId>org.example.spoon</groupId>
+      <artifactId>library-aspect</artifactId>
     </dependency>
   </dependencies>
+
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>aspectj-maven-plugin</artifactId>
+      </plugin>
+    </plugins>
+  </build>
 
 </project>

@@ -8,13 +8,11 @@ import org.aspectj.lang.annotation.Pointcut;
 
 @Aspect
 public class LibraryAspect {
+  @Pointcut("execution(@LAspect * *(..))")
+  private void pointCut() { }
 
-    @Pointcut("execution(@LAspect * *(..))")
-    private void pointCut() {}
-
-    @Before("pointCut()")
-    public void around(JoinPoint joinPoint) throws Throwable {
-        System.out.println("before");
-    }
-
+  @Before("pointCut()")
+  public void beforeAdvice(JoinPoint joinPoint) {
+    System.out.println("Library: " + joinPoint);
+  }
 }
